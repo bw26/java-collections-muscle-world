@@ -106,7 +106,7 @@ public class MuscleWorldApp {
         System.out.println("*** Muscle World Report ****");
         var peopleList = gymDataStore.getAllPeople();
         for (Person p : peopleList) {
-            System.out.println(p);
+            System.out.println(p+" ("+p.getNumCheckins()+" visits)");
         }
     }
 }
