@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Person {
 
     //
@@ -9,7 +11,7 @@ public class Person {
     private String lastName;
 
     // TODO: Add your collection here to store check-ins...
-
+    private ArrayList<String> checkins = new ArrayList<String>();
     //
     // Constructors
     //
@@ -35,11 +37,12 @@ public class Person {
 
     public void addCheckinTime(String time) {
         // TODO: Implement this method using your collection...
+        this.checkins.add(time);
     }
 
     public Integer getNumCheckins() {
         // TODO: Implement this method using your collection...
-        return 0;
+        return this.checkins.size();
     }
 
     //
