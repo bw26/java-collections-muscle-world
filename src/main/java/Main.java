@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.*;
 
 public class Main {
@@ -7,6 +8,6 @@ public class Main {
         try (Scanner scanner = new Scanner(System.in)) { // try-with-resources
             var muscleWorldApp = new MuscleWorldApp(gymDataStore, scanner);
             muscleWorldApp.run();
-        }
+        }catch (IOException e){}
     }
 }
