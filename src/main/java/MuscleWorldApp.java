@@ -1,4 +1,4 @@
-import java.util.NoSuchElementException;
+import java.io.*;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
@@ -24,7 +24,7 @@ public class MuscleWorldApp {
     // Public methods
     //
 
-    public void run(){
+    public void run() throws IOException {
         System.out.println("*** Muscle World ***");
         var userInput = "";
         while(!userInput.equals("q")) {
@@ -59,6 +59,11 @@ public class MuscleWorldApp {
 //                case "c" -> checkinPerson();
 //            }
         }
+        File f = new File("dataStore.dat");
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(f));
+        oos.writeObject(this.gymDataStore);
+        oos.flush();
+        oos.close();
         System.out.println("Bye!");
     }
 
